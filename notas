@@ -1,0 +1,24 @@
+documentacion:
+
+https://simplehtmldom.sourceforge.io/
+
+
+1ro - hacemos el require de la clase simple_html_dom:
+require_once 'simple-html-dom-master/simple_html_dom.php';
+
+
+2do - Escanear la pagina completa con file_get_html("https://url");
+
+$pagina = file_get_html("https://www.dominicanatours.com/asp/detalle.asp?destino=12736&r=TI&noches=7&hotel=32&origen=6396&campania=99&habitacion=2&top=&Cal_Mes=11&Cal_Anio=2019&#acal");
+
+3ro - ya podemos acceder mediante id, clases, etiquetas, hijos de elementos, etc:
+
+	* acceder por id: $pagina->find('div[id=panel3]', 0);  => devuelve un array
+
+	* acceder por clases: $pagina->find('span[class=ficha-oferta-precio]', 0);  => devuelve un array
+
+	* acceder a los hijos $elemento->children(); => devuelve un array
+
+	* acceder al elemento innerHTML $elementoDelArray->plaintext; => devuelve un string
+
+
