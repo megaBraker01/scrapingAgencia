@@ -50,7 +50,7 @@ foreach ($datosVuelo as $element) {
 $datosVuelo = $destino->find('table', 1)->children();
 $i = 1;
 //var_dump($datosVuelo);
-
+/*
 foreach ($datosVuelo as $element) {
     $i++;
     $texto = (string) trim($element->plaintext);
@@ -58,10 +58,10 @@ foreach ($datosVuelo as $element) {
     //echo $texto ."<br>";
     //var_dump($texto);
 }
+*/
 
 
 
-/*
 // precios en el calendario de salidas
 for($i = 9; $i <= 12; $i++){
   // Create DOM from URL or file
@@ -80,10 +80,20 @@ for($i = 9; $i <= 12; $i++){
     foreach($html->find('td[class=FechaSeleccionada]') as $element){
         $precio = $element->find('span[class=PrecioFechaSeleccionada]', 0);
         $dia = $element->find('span[class=diaCalendario]', 0);
-        echo "El precio: $precio, para el dia: $dia <hr>";
+        echo "El precio: $precio, para el dia: $dia <br>";
+        echo "hola<br>";
     }
+    
+    //var_dump($tasa);
+    if($tasaOrigen = $html->find('input[name=STasas]', 0)){
+        echo "tasasOrigen = ". $tasaOrigen->attr['value'];
+    }
+    
+    if($tasaDestino = $html->find('input[name=SBusiness]', 0)){
+        echo "<br>tasasDestino = ". $tasaDestino->attr['value'];
+    }
+    
 }
-*/
 ?>
     </body>
 </html>
