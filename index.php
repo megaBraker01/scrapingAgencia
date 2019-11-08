@@ -17,7 +17,7 @@ porciones sustanciales del software.
     <body>
         <h1>Haciendo Scraping</h1>
 <?php
-ini_set('display_errors', 'On');
+//ini_set('display_errors', 'On');
 
 require_once 'simple-html-dom-master/simple_html_dom.php';
 
