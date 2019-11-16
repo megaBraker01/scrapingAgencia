@@ -7,7 +7,8 @@
  */
 ini_set('display_errors', 'On');
 require_once 'conexion/conexion.php';
-require_once 'fileHandler.php';
+require_once 'fileHandler/fileHandler.php';
+use fileHandler\fileHandler; // nombreCarpeta/nombreClase
 /*
 $conexion = new conexion;
 $consulta = "select * from tblfechas";
@@ -25,9 +26,24 @@ echo $mostrar;
 //echo exec('whoami');
 
 $nuevoContenido = '{"titulo":"Altitud del monte Everest","categoria":"Cultura","respuestas":{"respuesta1":8850,"respuesta2":8900,"respuesta3":8875}}';
-$fileName = "fechas.json";
-$fileHandler = new fileHandler($fileName);
-//var_dump($fileHandler->getFile());
+$fileName = "notas.txt";
+$fileHandler = new fileHandler($fileName); // funciona con o sin nombre de archivo
+// $fileHandler->newFile($fileName); // funciona
+//$file = $fileHandler->getFile();
+//echo nl2br(($fileHandler->read($fileName))); // funciona
+//$fileHandler->write("empezamos con otra cosa"); // funciona
+//$fileHandler->close();
+//$fileHandler->rename('luego no.txt'); // funciona
+//$fileHandler->exists() // funciona
 
-$fileHandler->write($nuevoContenido);
-var_dump($fileHandler->getContent());
+echo nl2br($fileHandler->read()); // funciona
+        
+ 
+//$fileHandler->copy();
+
+//echo nl2br(($fileHandler->read($fileName)));
+//$fileHandler->write($nuevoContenido);
+//echo ($fileHandler->read());
+//$fileHandler->close();
+//$fileHandler->delete("copy 4 algo.txt");
+//echo (implode(" ", $fileHandler->getFileInfo()));
